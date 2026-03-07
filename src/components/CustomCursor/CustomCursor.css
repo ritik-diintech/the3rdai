@@ -1,0 +1,364 @@
+/* ═══════════════════════════════════════════════════════════
+   THE3RDAI — AI TARGETING RETICLE CURSOR (Performance Optimized)
+   ═══════════════════════════════════════════════════════════ */
+
+/* Default system cursor kept visible alongside the custom AI reticle */
+
+/* ── Main Cursor Container ── */
+.ai-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 100000;
+    will-change: transform;
+    contain: layout style;
+}
+
+/* ── Core Dot ── */
+.cursor-core {
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: 6px;
+    height: 6px;
+    background: var(--cyan);
+    border-radius: 50%;
+    box-shadow:
+        0 0 6px rgba(0, 240, 255, 0.8),
+        0 0 15px rgba(0, 240, 255, 0.3);
+    transition: transform 0.25s ease-out, box-shadow 0.25s ease-out, background 0.25s;
+}
+
+/* ── Crosshair Lines ── */
+.crosshair-line {
+    position: absolute;
+    background: var(--cyan);
+    opacity: 0.55;
+    transition: all 0.25s ease-out;
+}
+
+.crosshair-line.top {
+    width: 1px;
+    height: 10px;
+    top: -16px;
+    left: -0.5px;
+}
+
+.crosshair-line.bottom {
+    width: 1px;
+    height: 10px;
+    top: 6px;
+    left: -0.5px;
+}
+
+.crosshair-line.left {
+    width: 10px;
+    height: 1px;
+    top: -0.5px;
+    left: -16px;
+}
+
+.crosshair-line.right {
+    width: 10px;
+    height: 1px;
+    top: -0.5px;
+    left: 6px;
+}
+
+/* ── Rotating Reticle Ring ── */
+.cursor-reticle {
+    position: absolute;
+    top: -18px;
+    left: -18px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    animation: reticleRotate 8s linear infinite;
+    transition: top 0.3s ease-out, left 0.3s ease-out, width 0.3s ease-out, height 0.3s ease-out;
+}
+
+.reticle-seg {
+    position: absolute;
+    inset: 0;
+}
+
+.reticle-seg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1.5px solid transparent;
+    border-radius: 50%;
+}
+
+.reticle-seg:nth-child(1)::before {
+    border-top-color: rgba(0, 240, 255, 0.65);
+}
+
+.reticle-seg:nth-child(2)::before {
+    border-top-color: rgba(0, 240, 255, 0.35);
+    transform: rotate(90deg);
+}
+
+.reticle-seg:nth-child(3)::before {
+    border-top-color: rgba(0, 240, 255, 0.65);
+    transform: rotate(180deg);
+}
+
+.reticle-seg:nth-child(4)::before {
+    border-top-color: rgba(0, 240, 255, 0.35);
+    transform: rotate(270deg);
+}
+
+/* ── Outer Dashed Scan Ring ── */
+.cursor-scan-ring {
+    position: absolute;
+    top: -24px;
+    left: -24px;
+    width: 48px;
+    height: 48px;
+    border: 1px dashed rgba(0, 240, 255, 0.12);
+    border-radius: 50%;
+    animation: reticleRotate 12s linear infinite reverse;
+    transition: top 0.3s ease-out, left 0.3s ease-out, width 0.3s ease-out, height 0.3s ease-out, border-color 0.3s;
+}
+
+/* ── HUD Corner Brackets ── */
+.cursor-bracket {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-color: rgba(0, 240, 255, 0.45);
+    border-style: solid;
+    border-width: 0;
+    transition: all 0.25s ease-out;
+}
+
+.cursor-bracket.tl {
+    top: -20px;
+    left: -20px;
+    border-top-width: 1.5px;
+    border-left-width: 1.5px;
+}
+
+.cursor-bracket.tr {
+    top: -20px;
+    right: -20px;
+    border-top-width: 1.5px;
+    border-right-width: 1.5px;
+}
+
+.cursor-bracket.bl {
+    bottom: -20px;
+    left: -20px;
+    border-bottom-width: 1.5px;
+    border-left-width: 1.5px;
+}
+
+.cursor-bracket.br {
+    bottom: -20px;
+    right: -20px;
+    border-bottom-width: 1.5px;
+    border-right-width: 1.5px;
+}
+
+/* ── Coordinate Label ── */
+.cursor-coords {
+    position: absolute;
+    top: 22px;
+    left: 14px;
+    font-family: var(--font-mono);
+    font-size: 7.5px;
+    letter-spacing: 0.12em;
+    color: rgba(0, 240, 255, 0.4);
+    white-space: nowrap;
+    pointer-events: none;
+    text-shadow: 0 0 6px rgba(0, 240, 255, 0.15);
+    transition: color 0.25s;
+}
+
+/* ── Trailing Glow ── */
+.cursor-trail-glow {
+    position: fixed;
+    top: -80px;
+    left: -80px;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle,
+            rgba(0, 240, 255, 0.045) 0%,
+            rgba(0, 102, 255, 0.015) 40%,
+            transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+    will-change: transform;
+    contain: layout style;
+    transition: width 0.4s ease-out, height 0.4s ease-out;
+}
+
+/* ═══════════════════════════════════════════════════
+   HOVER STATE
+   ═══════════════════════════════════════════════════ */
+
+.ai-cursor.cursor-hover .cursor-core {
+    transform: scale(1.6);
+    background: rgba(0, 240, 255, 0.2);
+    box-shadow:
+        0 0 10px rgba(0, 240, 255, 0.9),
+        0 0 25px rgba(0, 240, 255, 0.4),
+        0 0 50px rgba(0, 240, 255, 0.15);
+}
+
+.ai-cursor.cursor-hover .crosshair-line.top {
+    height: 14px;
+    top: -22px;
+    opacity: 0.9;
+}
+
+.ai-cursor.cursor-hover .crosshair-line.bottom {
+    height: 14px;
+    top: 8px;
+    opacity: 0.9;
+}
+
+.ai-cursor.cursor-hover .crosshair-line.left {
+    width: 14px;
+    left: -22px;
+    opacity: 0.9;
+}
+
+.ai-cursor.cursor-hover .crosshair-line.right {
+    width: 14px;
+    left: 8px;
+    opacity: 0.9;
+}
+
+.ai-cursor.cursor-hover .cursor-reticle {
+    top: -26px;
+    left: -26px;
+    width: 52px;
+    height: 52px;
+    animation-duration: 3s;
+}
+
+.ai-cursor.cursor-hover .reticle-seg:nth-child(1)::before,
+.ai-cursor.cursor-hover .reticle-seg:nth-child(3)::before {
+    border-top-color: rgba(0, 240, 255, 0.9);
+}
+
+.ai-cursor.cursor-hover .cursor-scan-ring {
+    top: -32px;
+    left: -32px;
+    width: 64px;
+    height: 64px;
+    border-color: rgba(0, 240, 255, 0.25);
+    animation-duration: 6s;
+}
+
+.ai-cursor.cursor-hover .cursor-bracket {
+    border-color: rgba(0, 240, 255, 0.75);
+    width: 10px;
+    height: 10px;
+}
+
+.ai-cursor.cursor-hover .cursor-bracket.tl {
+    top: -28px;
+    left: -28px;
+}
+
+.ai-cursor.cursor-hover .cursor-bracket.tr {
+    top: -28px;
+    right: -28px;
+}
+
+.ai-cursor.cursor-hover .cursor-bracket.bl {
+    bottom: -28px;
+    left: -28px;
+}
+
+.ai-cursor.cursor-hover .cursor-bracket.br {
+    bottom: -28px;
+    right: -28px;
+}
+
+.ai-cursor.cursor-hover .cursor-coords {
+    color: rgba(0, 240, 255, 0.65);
+    top: 30px;
+    left: 18px;
+}
+
+.cursor-trail-glow.glow-hover {
+    width: 240px;
+    height: 240px;
+    top: -120px;
+    left: -120px;
+}
+
+/* ═══════════════════════════════════════════════════
+   CLICK STATE — Target Lock
+   ═══════════════════════════════════════════════════ */
+
+.ai-cursor.cursor-click .cursor-core {
+    transform: scale(0.5);
+    background: #fff;
+    box-shadow:
+        0 0 16px rgba(0, 240, 255, 1),
+        0 0 30px rgba(0, 240, 255, 0.5);
+}
+
+.ai-cursor.cursor-click .cursor-reticle {
+    top: -14px;
+    left: -14px;
+    width: 28px;
+    height: 28px;
+}
+
+.ai-cursor.cursor-click .cursor-scan-ring {
+    top: -18px;
+    left: -18px;
+    width: 36px;
+    height: 36px;
+    border-color: rgba(0, 240, 255, 0.4);
+}
+
+.ai-cursor.cursor-click .cursor-bracket.tl {
+    top: -14px;
+    left: -14px;
+}
+
+.ai-cursor.cursor-click .cursor-bracket.tr {
+    top: -14px;
+    right: -14px;
+}
+
+.ai-cursor.cursor-click .cursor-bracket.bl {
+    bottom: -14px;
+    left: -14px;
+}
+
+.ai-cursor.cursor-click .cursor-bracket.br {
+    bottom: -14px;
+    right: -14px;
+}
+
+/* ═══════════════════════════════════════════════════
+   ANIMATIONS — GPU-only (transform/opacity)
+   ═══════════════════════════════════════════════════ */
+
+@keyframes reticleRotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ═══════════════════════════════════════════════════
+   MOBILE — Hidden
+   ═══════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+
+    .ai-cursor,
+    .cursor-trail-glow {
+        display: none !important;
+    }
+}
