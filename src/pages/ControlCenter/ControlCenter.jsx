@@ -301,7 +301,7 @@ const ControlCenter = memo(() => {
                     <div className="cc-system-bar">
                         <div className="cc-system-left">
                             <span className="cc-system-dot" />
-                            <span className="cc-system-label">THE3RDAI COMMAND CENTER</span>
+                            <span className="cc-system-label">3RDAI COMMAND CENTER</span>
                             <span className="cc-system-version">v4.2.1</span>
                         </div>
                         <div className="cc-system-right">
@@ -486,7 +486,7 @@ const ControlCenter = memo(() => {
                         Your Command Center{' '}<span className="gradient-text">Awaits.</span>
                     </h2>
                     <p className="text-body" style={{ maxWidth: '520px', margin: '20px auto 40px' }}>
-                        Deploy The3rdAI's command center across your infrastructure and experience autonomous security firsthand.
+                        Deploy 3rdAI's command center across your infrastructure and experience autonomous security firsthand.
                     </p>
                     <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', flexWrap: 'wrap' }}>
                         <Link to="/contact" className="btn-primary"><span>Request Access</span></Link>

@@ -37,8 +37,8 @@ const Navbar = memo(() => {
         <>
             <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
                 <div className="navbar-inner">
-                    <Link to="/" className="navbar-logo" aria-label="The3rdAI Home" onMouseEnter={() => prefetchRoute(navLinks[0].component)}>
-                        <img src="/the3rdAiLogo.jpeg" alt="The3rdAI" className="navbar-logo-img" />
+                    <Link to="/" className="navbar-logo" aria-label="3rdAI Home" onMouseEnter={() => prefetchRoute(navLinks[0].component)}>
+                        <img src="/3rdAiLogo.jpeg" alt="3rdAI" className="navbar-logo-img" />
                         <div className="navbar-logo-text">
                             <span className="logo-name">THE3RD<span className="logo-ai">AI</span></span>
                         </div>

@@ -225,8 +225,8 @@ const AlertEngine = memo(() => {
                                             >
                                                 <div className="ae-notif-header">
                                                     <div className="ae-notif-app">
-                                                        <img src="/the3rdAiLogo.jpeg" alt="Logo" className="ae-notif-logo" />
-                                                        <span className="ae-notif-appname">The3rdAI</span>
+                                                        <img src="/3rdAiLogo.jpeg" alt="Logo" className="ae-notif-logo" />
+                                                        <span className="ae-notif-appname">3rdAI</span>
                                                     </div>
                                                     <span className="ae-notif-time">{noti.time}</span>
                                                 </div>

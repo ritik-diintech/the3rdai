@@ -6,7 +6,7 @@ import Architecture from './sections/Architecture'
 import Industries from './sections/Industries'
 import AlertEngine from './sections/AlertEngine'
 import Analytics from './sections/Analytics'
-import WhyThe3rdAI from './sections/WhyThe3rdAI'
+import Why3rdAI from './sections/Why3rdAI'
 import GlobalImpact from './sections/GlobalImpact'
 import CommandFooter from './sections/CommandFooter'
 import './Home.css'
@@ -33,7 +33,7 @@ export default function Home() {
             <Industries />
             <AlertEngine />
             <Analytics />
-            <WhyThe3rdAI />
+            <Why3rdAI />
             <GlobalImpact />
             <CommandFooter />
         </motion.main>

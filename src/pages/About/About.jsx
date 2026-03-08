@@ -13,7 +13,7 @@ import './About.css'
 gsap.registerPlugin(ScrollTrigger)
 
 const timeline = [
-    { year: '2021', title: 'Project: Genesis', phase: 'EVL-01', status: 'SYNCHRONIZED', desc: 'The3rdAI founded with a primary directive: redefine autonomous surveillance intelligence. The first neural seed was planted in an isolated sandbox environment.' },
+    { year: '2021', title: 'Project: Genesis', phase: 'EVL-01', status: 'SYNCHRONIZED', desc: '3rdAI founded with a primary directive: redefine autonomous surveillance intelligence. The first neural seed was planted in an isolated sandbox environment.' },
     { year: '2022', title: 'Neural Core v1', phase: 'EVL-02', status: 'OPERATIONAL', desc: 'First-generation AI engine deployed globally. Real-time threat detection benchmarks reaching 30fps with a 99.2% accuracy rating in urban environments.' },
     { year: '2023', title: 'Edge Integration', phase: 'EVL-03', status: 'OPTIMIZED', desc: 'Transition to full Edge Computing. Sub-millisecond on-device processing achieved, eliminating cloud latency and ensuring secure, zero-lag intelligence.' },
     { year: '2024', title: 'City-Scale Matrix', phase: 'EVL-04', status: 'SCALING', desc: 'Architecture scaled to planetary proportions. Protecting entire smart city districts with 10,000+ cameras integrated into a unified hive-mind neural grid.' },
@@ -233,13 +233,13 @@ const About = memo(() => {
                             <div className="section-label">The Birth</div>
                             <h2 className="heading-lg">From Concept to<br /><span className="gradient-text">Command Authority</span></h2>
                             <p className="text-body" style={{ marginTop: '20px' }}>
-                                The3rdAI was born from a single observation: traditional surveillance captures footage, but never truly <em>sees</em>. We set out to build a system that doesn't just record — it understands, predicts, and acts.
+                                3rdAI was born from a single observation: traditional surveillance captures footage, but never truly <em>sees</em>. We set out to build a system that doesn't just record — it understands, predicts, and acts.
                             </p>
                             <p className="text-body" style={{ marginTop: '16px' }}>
                                 Our founders, veterans in AI research and advanced security technology, envisioned a platform where every camera becomes an intelligent sentinel, every frame a data point in a vast neural network of autonomous security.
                             </p>
                             <p className="text-body" style={{ marginTop: '16px' }}>
-                                After years of research in neural architecture, computer vision, and edge computing, The3rdAI emerged as the synthesis of cutting-edge AI and real-world security operations — a platform built for the threats of tomorrow.
+                                After years of research in neural architecture, computer vision, and edge computing, 3rdAI emerged as the synthesis of cutting-edge AI and real-world security operations — a platform built for the threats of tomorrow.
                             </p>
                         </div>
                     </div>
@@ -254,7 +254,7 @@ const About = memo(() => {
                             <div className="section-label">Intelligence Philosophy</div>
                             <h2 className="heading-lg">See Everything.{' '}<span className="gradient-text">Understand Everything.</span></h2>
                             <p className="text-body" style={{ marginTop: '20px' }}>
-                                Intelligence is not about watching. It's about understanding context, predicting intent, and automating response before harm materializes. The3rdAI doesn't just detect — it comprehends the full situational landscape.
+                                Intelligence is not about watching. It's about understanding context, predicting intent, and automating response before harm materializes. 3rdAI doesn't just detect — it comprehends the full situational landscape.
                             </p>
                             <p className="text-body" style={{ marginTop: '16px' }}>
                                 Our neural architecture processes visual data through multiple cognitive layers — from raw pixel analysis to contextual understanding to behavioral prediction — mirroring the way a trained security expert would analyze a scene, but at machine speed and scale.
@@ -319,7 +319,7 @@ const About = memo(() => {
                         <div className="purpose-logo-center">
                             <div className="logo-premium-outer-ring" />
                             <div className="logo-premium-wrapper">
-                                <img src="/the3rdAiLogo.jpeg" alt="Premium Brand Logo" className="logo-premium" loading="lazy" />
+                                <img src="/3rdAiLogo.jpeg" alt="Premium Brand Logo" className="logo-premium" loading="lazy" />
                                 <div className="logo-scanner-line" />
                             </div>
                         </div>
@@ -535,14 +535,14 @@ const About = memo(() => {
                 <div className="container">
                     <div className="about-video-block about-split">
                         <div className="about-video-panel about-video-large">
-                            <img src={eyeImg} alt="The3rdAI Vision" loading="lazy" />
+                            <img src={eyeImg} alt="3rdAI Vision" loading="lazy" />
                             <div className="about-video-overlay" />
                         </div>
                         <div>
                             <div className="section-label">Operational Excellence</div>
                             <h2 className="heading-lg">Where AI Meets <span className="gradient-text">Real-World Impact</span></h2>
                             <p className="text-body" style={{ marginTop: '20px' }}>
-                                From concept to deployment, our systems are battle-tested in the most demanding environments. Airports, government facilities, smart city networks, and critical infrastructure around the world rely on The3rdAI.
+                                From concept to deployment, our systems are battle-tested in the most demanding environments. Airports, government facilities, smart city networks, and critical infrastructure around the world rely on 3rdAI.
                             </p>
                             <div className="about-metrics">
                                 <div className="about-metric">
@@ -572,7 +572,7 @@ const About = memo(() => {
                         <span className="gradient-text">Borders.</span>
                     </h2>
                     <p className="text-body" style={{ maxWidth: '600px', margin: '20px auto 60px' }}>
-                        Expanding across continents with powerful CCTV deployments. From gated communities to enterprise infrastructure, The3rdAI scales without compromise.
+                        Expanding across continents with powerful CCTV deployments. From gated communities to enterprise infrastructure, 3rdAI scales without compromise.
                     </p>
                     <div className="about-global-stats">
                         <div className="about-global-stat">

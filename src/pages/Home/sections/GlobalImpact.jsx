@@ -58,7 +58,7 @@ const GlobalImpact = memo(() => {
                     <span className="gradient-text">One Frame at a Time.</span>
                 </h2>
                 <p className="text-body" style={{ maxWidth: '560px', margin: '20px auto 0' }}>
-                    From smart cities to critical infrastructure, The3rdAI delivers intelligence at scale.
+                    From smart cities to critical infrastructure, 3rdAI delivers intelligence at scale.
                 </p>
 
                 <div className="impact-stat-row">

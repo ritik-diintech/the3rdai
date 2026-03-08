@@ -14,7 +14,7 @@ const pageVariants = {
 }
 
 const faqs = [
-    { q: 'What infrastructure is required for deployment?', a: 'The3rdAI works with any IP camera system. Our software-defined vision layer deploys without hardware changes — on-premise, cloud, or hybrid.' },
+    { q: 'What infrastructure is required for deployment?', a: '3rdAI works with any IP camera system. Our software-defined vision layer deploys without hardware changes — on-premise, cloud, or hybrid.' },
     { q: 'How long does deployment take?', a: 'Standard deployments complete in 2-4 weeks. Our AI begins learning your environment from day one and reaches optimal accuracy within 72 hours.' },
     { q: 'What about data privacy and compliance?', a: 'All data is encrypted end-to-end with AES-256. We are compliant with GDPR, SOC 2, and FIPS-140-2. Air-gapped deployments available for classified environments.' },
     { q: 'Can it integrate with existing security systems?', a: 'Yes. Our Open API integrates with all major VMS, access control, and alarm systems. Custom integrations available through our developer SDK.' },

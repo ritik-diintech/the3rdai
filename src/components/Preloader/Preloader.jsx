@@ -127,7 +127,7 @@ export default function Preloader({ onComplete }) {
                     {/* Center content container rests above light beams conceptually */}
                     <div className="preloader-content">
                         <div className="preloader-logo-container">
-                            <img src="/the3rdAiLogo.jpeg" alt="The3rdAI Logo" className="preloader-logo-original" />
+                            <img src="/3rdAiLogo.jpeg" alt="3rdAI Logo" className="preloader-logo-original" />
                         </div>
                     </div>
 
@@ -150,7 +150,7 @@ export default function Preloader({ onComplete }) {
                                 )}
                             </div>
                             <div className="footer-right">
-                                <div className="copyright">© 2026 THE3RDAI</div>
+                                <div className="copyright">© 2026 3RDAI</div>
                             </div>
                         </div>
                         <div className="footer-progress-bar">

@@ -10,7 +10,7 @@ const Footer = memo(() => {
                 <div className="footer-top">
                     <div className="footer-brand">
                         <div className="footer-logo">
-                            <img src="/the3rdAiLogo.jpeg" alt="The3rdAI" className="footer-logo-img" />
+                            <img src="/3rdAiLogo.jpeg" alt="3rdAI" className="footer-logo-img" />
                             <div>
                                 <h3 className="footer-logo-name">THE3RD<span className="logo-ai">AI</span></h3>
                                 <p className="footer-tagline">Vision Beyond Surveillance</p>
@@ -44,7 +44,7 @@ const Footer = memo(() => {
 
                 <div className="footer-bottom">
                     <p className="footer-copyright">
-                        © {new Date().getFullYear()} The3rdAI. All systems monitored.
+                        © {new Date().getFullYear()} 3rdAI. All systems monitored.
                     </p>
                     <div className="footer-status">
                         <span className="status-dot" />

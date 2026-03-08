@@ -5,7 +5,7 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { Stars } from '@react-three/drei'
 import * as THREE from 'three'
 import { motion, useMotionValue, useSpring } from 'framer-motion'
-import './WhyThe3rdAI.css'
+import './Why3rdAI.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -256,7 +256,7 @@ const HUDOverlay = memo(() => {
 
 HUDOverlay.displayName = 'HUDOverlay'
 
-const WhyThe3rdAI = memo(() => {
+const Why3rdAI = memo(() => {
     const sectionRef = useRef(null)
     const textsRef = useRef([])
 
@@ -350,7 +350,7 @@ const WhyThe3rdAI = memo(() => {
                 <div className="why-cinematic-content">
                     {/* Header Top Left */}
                     <div className="why-section-header">
-                        <h2>WHY <span className="text-glow">THE3RDAI</span></h2>
+                        <h2>WHY <span className="text-glow">3RDAI</span></h2>
                         <div className="header-line"></div>
                         <p>GLOBAL THREAT NEUTRALIZATION INFRASTRUCTURE</p>
                     </div>
@@ -400,6 +400,6 @@ const WhyThe3rdAI = memo(() => {
     )
 })
 
-WhyThe3rdAI.displayName = 'WhyThe3rdAI'
+Why3rdAI.displayName = 'Why3rdAI'
 
-export default WhyThe3rdAI
+export default Why3rdAI

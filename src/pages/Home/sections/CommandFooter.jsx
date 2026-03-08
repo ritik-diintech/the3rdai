@@ -32,7 +32,7 @@ const CommandFooter = memo(() => {
                         Ready to Deploy <span className="gradient-text">Autonomous Intelligence?</span>
                     </h2>
                     <p className="command-footer-desc">
-                        Join the next generation of security. Deploy The3rdAI across your infrastructure today.
+                        Join the next generation of security. Deploy 3rdAI across your infrastructure today.
                     </p>
                     <div className="command-footer-buttons">
                         <Link to="/contact" className="btn-primary">
