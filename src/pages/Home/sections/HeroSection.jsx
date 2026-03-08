@@ -196,7 +196,7 @@ const HeroSection = memo(() => {
                 {/* Brand name with lines */}
                 <div className="hero-brand">
                     <span className="hero-brand-line-left" />
-                    <span className="hero-brand-name">The3rd<span className="hero-brand-ai">AI</span></span>
+                    <span className="hero-brand-name">3rd<span className="hero-brand-ai">AI</span></span>
                     <span className="hero-brand-line-right" />
                 </div>
 

@@ -12,7 +12,7 @@ const Footer = memo(() => {
                         <div className="footer-logo">
                             <img src="/3rdAiLogo.jpeg" alt="3rdAI" className="footer-logo-img" />
                             <div>
-                                <h3 className="footer-logo-name">THE3RD<span className="logo-ai">AI</span></h3>
+                                <h3 className="footer-logo-name">3RD<span className="logo-ai">AI</span></h3>
                                 <p className="footer-tagline">Vision Beyond Surveillance</p>
                             </div>
                         </div>

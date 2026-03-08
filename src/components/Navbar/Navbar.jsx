@@ -40,7 +40,7 @@ const Navbar = memo(() => {
                     <Link to="/" className="navbar-logo" aria-label="3rdAI Home" onMouseEnter={() => prefetchRoute(navLinks[0].component)}>
                         <img src="/3rdAiLogo.jpeg" alt="3rdAI" className="navbar-logo-img" />
                         <div className="navbar-logo-text">
-                            <span className="logo-name">THE3RD<span className="logo-ai">AI</span></span>
+                            <span className="logo-name">3RD<span className="logo-ai">AI</span></span>
                         </div>
                     </Link>
 
