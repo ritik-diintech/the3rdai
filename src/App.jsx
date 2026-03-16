@@ -15,6 +15,7 @@ import Security from './pages/Security/Security'
 import Services from './pages/Services/Services'
 import ControlCenter from './pages/ControlCenter/ControlCenter'
 import Contact from './pages/Contact/Contact'
+import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy'
 
 // Removed PageLoader as per user request to remove "INITIALIZING INTELLIGENCE" preloader
 
@@ -76,6 +77,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/control-center" element={<ControlCenter />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/pp" element={<PrivacyPolicy />} />
         </Routes>
       </AnimatePresence>
       <Footer />

@@ -32,6 +32,7 @@ const Footer = memo(() => {
                         <h4 className="footer-nav-title">Company</h4>
                         <Link to="/about" className="footer-link">About</Link>
                         <Link to="/contact" className="footer-link">Contact</Link>
+                        <Link to="/pp" className="footer-link">Privacy Policy</Link>
                     </div>
 
                     <div className="footer-nav-group">
