@@ -1,0 +1,21 @@
+{
+  "name": "3rdAI — Intelligence Beyond Vision",
+  "short_name": "3rdAI",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#03050A",
+  "background_color": "#03050A",
+  "display": "standalone",
+  "start_url": "/",
+  "description": "3rdAI - Autonomous AI Vision Intelligence Security Platform."
+}
