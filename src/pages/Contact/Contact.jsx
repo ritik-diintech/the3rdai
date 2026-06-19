@@ -131,7 +131,7 @@ const Contact = memo(() => {
                                     </span>
                                     <div>
                                         <span className="contact-detail-label">Secure Line</span>
-                                        <span className="contact-detail-value">+91 81475 40362</span>
+                                        <span className="contact-detail-value">+917428490815</span>
                                     </div>
                                 </div>
                                 <div className="contact-detail">
