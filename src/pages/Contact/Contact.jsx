@@ -100,17 +100,29 @@ const Contact = memo(() => {
                                     </div>
                                 </div>
                                 <div className="contact-detail">
-                                    <span className="contact-detail-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="premium-icon">
-                                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-                                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-                                        </svg>
-                                    </span>
-                                    <div>
-                                        <span className="contact-detail-label">Intelligence Desk</span>
-                                        <span className="contact-detail-value">vijaykumar@3rdai.co</span>
-                                    </div>
-                                </div>
+    <span className="contact-detail-icon">
+        ...
+    </span>
+
+    <div>
+        <span className="contact-detail-label">Intelligence Desk</span>
+
+        <span className="contact-detail-value">
+            vijaykumar@3rdai.co
+        </span>
+
+        <div
+            style={{
+                marginTop: "6px",
+                fontSize: "13px",
+                color: "#8a9db2",
+                letterSpacing: "0.5px"
+            }}
+        >
+            (A unit of EPOTECH Global Services Pvt Ltd)
+        </div>
+    </div>
+</div>
                                 <div className="contact-detail">
                                     <span className="contact-detail-icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="premium-icon">
