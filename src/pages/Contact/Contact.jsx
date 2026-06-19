@@ -108,7 +108,7 @@ const Contact = memo(() => {
                                     </span>
                                     <div>
                                         <span className="contact-detail-label">Intelligence Desk</span>
-                                        <span className="contact-detail-value">contact@diintech.com</span>
+                                        <span className="contact-detail-value">vijaykumar@3rdai.co</span>
                                     </div>
                                 </div>
                                 <div className="contact-detail">
