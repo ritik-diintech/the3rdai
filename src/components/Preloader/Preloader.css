@@ -1,0 +1,341 @@
+/* Preloader.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400;500;600&display=swap');
+
+.preloader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #020305;
+    z-index: 10000;
+    overflow: hidden;
+    font-family: 'Roboto Mono', 'SF Mono', 'Consolas', 'Courier New', monospace;
+    will-change: opacity;
+}
+
+.preloader-haze {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 162, 255, 0.02) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Scanned Area Revealer */
+.preloader-scanned-revealer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    will-change: width;
+    transform: translateZ(0);
+    /* Hardware Acceleration core */
+}
+
+.preloader-revealed-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* AI Grid & Overlays */
+.revealed-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(0, 162, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 162, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: center;
+}
+
+.revealed-hud {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60vmin;
+    height: 60vmin;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(0, 162, 255, 0.1);
+    border-radius: 50%;
+    background: radial-gradient(circle, transparent 40%, rgba(0, 162, 255, 0.02) 100%);
+    box-shadow: inset 0 0 30px rgba(0, 162, 255, 0.02);
+}
+
+.revealed-hud::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    width: 1px;
+    height: 120%;
+    background: linear-gradient(to bottom, transparent, rgba(0, 162, 255, 0.08) 50%, transparent);
+}
+
+.revealed-hud::after {
+    content: '';
+    position: absolute;
+    left: -10%;
+    top: 50%;
+    height: 1px;
+    width: 120%;
+    background: linear-gradient(to right, transparent, rgba(0, 162, 255, 0.08) 50%, transparent);
+}
+
+.revealed-mapping {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80vmin;
+    height: 80vmin;
+    transform: translate(-50%, -50%);
+    border: 1px dashed rgba(0, 162, 255, 0.04);
+    border-radius: 50%;
+}
+
+/* Sharp Volumetric Laser Sweep */
+.preloader-beam-volume {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Clean, crisp triangular geometry, completely originating from center */
+.beam-sharp-core {
+    position: absolute;
+    inset: 0;
+    /* Cyan to Electric Blue gradient, sharp without heavy blurs */
+    background: linear-gradient(180deg, rgba(0, 229, 255, 0.1) 0%, rgba(59, 130, 246, 0.15) 50%, rgba(0, 229, 255, 0.1) 100%);
+    /* Exact origin from absolute screen center to precise location matching the scan line */
+    clip-path: polygon(50vw 50vh, calc(var(--scan-x) - 1.5vw) -10vh, calc(var(--scan-x)) -10vh, calc(var(--scan-x)) 110vh, calc(var(--scan-x) - 1.5vw) 110vh);
+    mix-blend-mode: screen;
+    will-change: clip-path;
+    transform: translateZ(0);
+    /* Hardware Acceleration core */
+}
+
+/* The vertical scanline itself - sharp, modern tech */
+.preloader-scanline {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    /* Crisp cyan to blue core line */
+    background: linear-gradient(180deg, rgba(0, 229, 255, 0), rgba(0, 229, 255, 0.9) 20%, rgba(59, 130, 246, 0.9) 80%, rgba(59, 130, 246, 0));
+    box-shadow:
+        0 0 8px 1px rgba(0, 229, 255, 0.6),
+        0 0 15px 3px rgba(59, 130, 246, 0.3);
+    z-index: 4;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    will-change: left;
+    transform: translateZ(0);
+    /* Hardware Acceleration core */
+}
+
+/* Logo container & style */
+.preloader-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    pointer-events: none;
+}
+
+.preloader-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preloader-logo-original {
+    width: 160px;
+    /* Small, modern bounding */
+    max-width: 50vw;
+    object-fit: contain;
+    object-fit: contain;
+    mix-blend-mode: screen;
+    filter: drop-shadow(0 0 10px rgba(0, 162, 255, 0.15));
+    will-change: filter;
+    /* Muted shadow */
+}
+
+/* Top Text */
+.preloader-top-text {
+    position: absolute;
+    top: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: rgba(255, 255, 255, 0.3);
+    z-index: 5;
+    text-transform: uppercase;
+    font-family: 'Roboto Mono', monospace;
+    pointer-events: none;
+}
+
+/* Footer UI spanning the page */
+.preloader-footer-new {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    padding: 0 4vw 6vh 4vw;
+    z-index: 6;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.loading-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 2px;
+    font-family: 'Roboto Mono', monospace;
+    text-transform: uppercase;
+}
+
+.loading-number {
+    font-size: 6rem;
+    font-weight: 500;
+    line-height: 1;
+    background: linear-gradient(90deg, #00E5FF, #8B5CF6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Roboto Mono', monospace;
+    letter-spacing: -0.05em;
+    min-width: 180px;
+}
+
+.loading-text-clear {
+    font-size: 2.2rem;
+    font-weight: 300;
+    line-height: 1;
+    color: #ffffff;
+    font-family: 'Roboto Mono', monospace;
+    letter-spacing: 0.25em;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.3),
+        0 0 25px rgba(0, 229, 255, 0.8),
+        0 0 45px rgba(0, 229, 255, 0.5);
+    animation: textPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes textPulse {
+    0% {
+        opacity: 0.8;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 0 0 15px rgba(0, 229, 255, 0.5);
+    }
+
+    100% {
+        opacity: 1;
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.4), 0 0 30px rgba(0, 229, 255, 0.9), 0 0 50px rgba(0, 229, 255, 0.6);
+    }
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-bottom: 12px;
+    /* align with the baseline of the number */
+}
+
+.copyright {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    color: rgba(255, 255, 255, 0.3);
+    font-family: 'Roboto Mono', monospace;
+    text-transform: uppercase;
+}
+
+.footer-progress-bar {
+    width: 100%;
+    height: 1px;
+    /* Very thin just like the image */
+    background: rgba(255, 255, 255, 0.05);
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #00E5FF, #8B5CF6);
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+    transform: translateZ(0);
+    /* Hardware accelerated */
+    will-change: width;
+}
+
+/* Mobile Responsiveness for Preloader */
+@media (max-width: 768px) {
+    .loading-number {
+        font-size: 3.5rem;
+        min-width: 100px;
+    }
+
+    .loading-text-clear {
+        font-size: 1.4rem;
+        margin-top: 10px;
+        margin-bottom: 8px;
+    }
+
+    .preloader-top-text {
+        font-size: 0.55rem;
+        letter-spacing: 0.2em;
+    }
+
+    .preloader-logo-original {
+        width: 120px;
+    }
+
+    .revealed-hud {
+        width: 80vmin;
+        height: 80vmin;
+    }
+
+    .revealed-mapping {
+        width: 95vmin;
+        height: 95vmin;
+    }
+
+    .preloader-footer-new {
+        padding: 0 5vw 4vh 5vw;
+    }
+
+    .footer-left .loading-label {
+        font-size: 0.55rem;
+    }
+
+    .footer-right .copyright {
+        font-size: 0.5rem;
+    }
+}
